@@ -1,23 +1,17 @@
-// Validar número de teléfono (10 dígitos)
-function validarTelefono(telefono) {
+document.getElementById("btn-telefono").addEventListener("click", () => {
+  let tel = document.getElementById("telefono").value;
   let regex = /^\d{10}$/;
-  return regex.test(telefono);
-}
-console.log(validarTelefono("3124567890")); // true
-console.log(validarTelefono("12345")); // false
+  document.getElementById("resultado-telefono").textContent = regex.test(tel) ? "Teléfono válido" : "Teléfono no válido";
+});
 
-// Validar URL
-function validarURL(url) {
+document.getElementById("btn-url").addEventListener("click", () => {
+  let url = document.getElementById("url").value;
   let regex = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/.*)?$/;
-  return regex.test(url);
-}
-console.log(validarURL("https://google.com")); // true
-console.log(validarURL("not_a_url")); // false
+  document.getElementById("resultado-url").textContent = regex.test(url) ? "URL válida" : "URL no válida";
+});
 
-// Validar contraseña (mínimo 8 caracteres, 1 número y 1 mayúscula)
-function validarPassword(pass) {
+document.getElementById("btn-password").addEventListener("click", () => {
+  let pass = document.getElementById("password").value;
   let regex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  return regex.test(pass);
-}
-console.log(validarPassword("Hola1234")); // true
-console.log(validarPassword("hola")); // false
+  document.getElementById("resultado-password").textContent = regex.test(pass) ? "Contraseña válida" : "Contraseña no válida";
+});
